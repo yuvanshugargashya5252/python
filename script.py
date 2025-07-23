@@ -5,15 +5,15 @@ import threading
 import sys
 
 messages = [
-    "check",
-    "perfect",
-    "x"
+    " ",
+    "  "
 ]
 
 sending = False
+num=1000
 
 def send_messages():
-    global sending
+    global sending , num
     sending = True
     time.sleep(1)
     while sending:
@@ -21,6 +21,7 @@ def send_messages():
             if not sending:
                 break
             pyautogui.typewrite(msg)
+            
             pyautogui.press('enter')
             # time.sleep(0.1)  # small delay between messages
 
